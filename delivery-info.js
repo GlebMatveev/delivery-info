@@ -1,5 +1,6 @@
 // All select parameters are pre-created in Bitrix backend.
 // The script only hides unnecessary parameters "on the fly" in frontend.
+// The script is connected on the ordering page https://mayak.art/order/ via the Bitrix function <?$APPLICATION->AddHeadScript(.../delivery-info.js");?>
 
 function ccStartScript () {
 
