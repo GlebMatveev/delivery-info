@@ -50,5 +50,38 @@ function ccStartScript () {
         ccDeliveryReplacement.options[2] = new Option("Связаться со мной. Удалить товар, если не отвечаю", "VAR2");
         ccDeliveryReplacement.options[3] = new Option("Не связываться со мной. Заменить товар.", "VAR3");
         ccDeliveryReplacement.options[4] = new Option("Не связываться со мной. Удалить товар", "VAR4");
+
+
+        // listening for datetime picker field changes
+		ccDeliveryCalendar.addEventListener('change', function () {
+
+			// getting the time intervals
+			let ccDeliveryInterval = document.getElementsByName('ORDER_PROP_24')[0];
+
+			// clearing the intervals
+			ccDeliveryInterval.innerHTML = '';
+
+			// current hour
+			Data = new Date();
+			let ccHour = Data.getHours();
+			let ccCurrentHour = parseInt(ccHour, 10);
+			
+			// getting the selected date and conversion
+			let ccSelectedDate = ccDeliveryCalendar.value;
+			let ccArr = ccSelectedDate.split('.'); 
+			let ccArrReversed = ccArr.reverse();
+			ccSelectedDate = ccArrReversed.join('.');
+
+			let ccCalendarDate = new Date(ccSelectedDate);
+
+			
+			// reset the minutes of the current date and time for correct comparison
+			ccCurrentDate = new Date();
+			ccCurrentDate.setHours(0,0,0,0);
+
+            console.log(ccCurrentHour);
+            console.log(ccCalendarDate);
+            console.log(ccCurrentDate);
+		});
     }
 }
