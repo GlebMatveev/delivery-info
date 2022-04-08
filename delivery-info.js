@@ -70,10 +70,11 @@ function ccStartScript () {
             let ccCurrentHour = parseInt(ccHour, 10);
             
             // getting the selected date and conversion
+            // note: date with dots not working in safari
             let ccSelectedDate = ccDeliveryCalendar.value;
             let ccArr = ccSelectedDate.split('.'); 
             let ccArrReversed = ccArr.reverse();
-            ccSelectedDate = ccArrReversed.join('.');
+            ccSelectedDate = ccArrReversed.join('/');
 
             let ccCalendarDate = new Date(ccSelectedDate);
 
