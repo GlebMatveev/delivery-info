@@ -25,7 +25,7 @@ function ccStartScript () {
 
         // setting cursor style
         const ccCss = '#soa-property-26:hover { cursor: pointer; }';
-        let ccStyle = document.createElement('ccStyle');
+        let ccStyle = document.createElement('style');
 
         if (ccStyle.styleSheet) {
             ccStyle.styleSheet.cssText = ccCss;
