@@ -1,3 +1,6 @@
+// All select parameters are pre-created in Bitrix backend.
+// The script only hides unnecessary parameters "on the fly" in frontend.
+
 function ccStartScript () {
 
     // getting elements on page:
